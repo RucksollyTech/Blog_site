@@ -1,21 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Blogs from './Blogs'
 
 const Home = () => {
   return (
-    <div>
-        <p>Hello my react APP</p>
-        <small>Starting a new project</small>
+    <div className='standardWidth pt_4'>
+        <h1>
+            Blog
+        </h1>
         <p>
-            <Link to={"/about"} className='btn btn-sm btn-info text-white'>
-                View the about page
-            </Link>
+            Explore Blog from everyone around the globe.
         </p>
-        <p>
-            <Link to={"/all_blogs"} className='BlogBtn'>
-                View all blogs
-            </Link>
-        </p>
+        <div className="searchSection">
+            <div>
+                <div className='searchBox'>
+                    <img width="20" height="20" src="https://img.icons8.com/ios/20/search--v1.png" alt="search--v1"/>
+                    <input type="text" />
+                </div>
+            </div>
+            <div className='flex'>
+                <div className='left_auto sideBarContainer'>
+                    <span className='font_12 bold8'>
+                        <Link to={"/"} className='text-muted'>Home</Link>
+                    </span>
+                    <span className='font_12 bold8'>
+                        <Link to={"/all_blogs"} className='text-muted'>All blogs</Link>
+                    </span>
+                    <span className='font_12 bold8'>
+                        <Link to={"/about"} className='text-muted'>About</Link>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <Blogs />
     </div>
   )
 }

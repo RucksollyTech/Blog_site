@@ -1,7 +1,32 @@
-.BlogBtn{
-    background-color: yellow;
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
+
+.standardWidth{
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+}
+.searchSection{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.sideBarContainer span{
+    padding-left: 20px;
+}
+.searchBox{
+    background: #f1f1f1;
+    border-radius: 5px;
+    padding: 4px;
+    display: inline-block;
+}
+.searchBox input{
+    background: #f1f1f1;
+    border: none;
+    padding: 0 10px;
+}
+
+.bloger{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
 }
