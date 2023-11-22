@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
   return (
@@ -10,7 +11,7 @@ const Blogs = () => {
                 
             
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -23,7 +24,7 @@ const Blogs = () => {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -36,7 +37,7 @@ const Blogs = () => {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -51,7 +52,7 @@ const Blogs = () => {
                 </Card>
 
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -64,7 +65,7 @@ const Blogs = () => {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -77,7 +78,7 @@ const Blogs = () => {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="/Images/mmm.jpg" />
                     <Card.Body>
                     <Card.Title>Card title</Card.Title>
                     <Card.Text>
@@ -92,6 +93,7 @@ const Blogs = () => {
                 </Card>
             </div>
         </CardGroup>
+        
     </div>
   )
 }

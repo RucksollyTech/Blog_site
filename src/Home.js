@@ -34,6 +34,11 @@ const Home = () => {
         </div>
 
         <Blogs />
+        <div className="mt_3">
+            <Link to={"/all_blogs"} className='text-danger bold6 font_20'>
+                View all...
+            </Link>
+        </div>
     </div>
   )
 }

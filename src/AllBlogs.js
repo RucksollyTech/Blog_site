@@ -1,8 +1,11 @@
 import React from 'react'
+import Blogs from './Blogs'
 
 const AllBlogs = () => {
     return (
-        <div>AllBlogs</div>
+        <div className='standardWidth'>
+            <Blogs />
+        </div>
     )
 }
 

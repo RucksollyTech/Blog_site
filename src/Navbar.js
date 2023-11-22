@@ -3,26 +3,32 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import AppName from './AppName';
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" className='sticky-top bg-white'>
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <AppName />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="#link">All Blogs</Nav.Link>
+            <NavDropdown title="Bloggers" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Rucksolly</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                Chuks
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Faith</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Denyefa
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                View all ..
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

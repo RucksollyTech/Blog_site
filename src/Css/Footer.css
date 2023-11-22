@@ -1,0 +1,20 @@
+.footerWrapper{
+    padding: 70px 0 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+}
+
+.justifier{
+    justify-content: space-evenly;
+}
+.left_auto.flex.justifier{
+    max-width: 200px;
+    width: 100%;
+}
+.aboutContainer{
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+    padding-top: 50px;
+}
