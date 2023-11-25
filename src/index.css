@@ -17,6 +17,7 @@ textarea{
 
 button{
   border: none !important;
+  background: none;
 }
 input,select{
   outline: none !important;

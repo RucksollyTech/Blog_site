@@ -3,6 +3,13 @@
 Home page
 About page
 All blogs
+Single blog
+user profile
+write blog
+
+login
+sign in
+
 
 
 

@@ -8,16 +8,19 @@ const Footer = () => {
             <div className="footerWrapper">
                 <AppName />
                 <div className='flex justifier'>
-                    <Link to={"/"} className='bold6'>
+                    <Link to={"/all_blog"} className='bold6 text-dark'>
                         All blog
                     </Link>
-                    <Link to={"/"} className='bold6'>
+                    <Link to={"/"} className='bold6 text-dark'>
+                        All bloggers 
+                    </Link>
+                    <Link to={"/"} className='bold6 text-dark'>
                         FAQs
                     </Link>
-                    <Link to={"/"} className='bold6'>
+                    <Link to={"/about"} className='bold6 text-dark'>
                         About
                     </Link>
-                    <Link to={"/"} className='bold6'>
+                    <Link to={"/"} className='bold6 text-dark'>
                         Support
                     </Link>
                 </div>
