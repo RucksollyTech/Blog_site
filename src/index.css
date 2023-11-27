@@ -13,11 +13,13 @@ a{
 }
 textarea{
   outline: none;
+  resize: none !important;
 }
 
 button{
   border: none !important;
   background: none;
+  
 }
 input,select{
   outline: none !important;

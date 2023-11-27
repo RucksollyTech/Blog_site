@@ -4,11 +4,12 @@ import Blogs from './Blogs'
 
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 const Home = () => {
     const [lgShow, setLgShow] = useState(false);
 
-    console.log(lgShow, "lgShow")
+    const [isLoggedIn, setIsLoggedIn] = useState(true)
     return (
         <div className='standardWidth pt_4'>
             <h1>
@@ -59,11 +60,30 @@ const Home = () => {
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
-                    Large Modal
-                </Modal.Title>
+                    <Modal.Title id="example-modal-sizes-title-lg">
+                        {isLoggedIn ? "Write a blog" : "Please log in"}
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>...</Modal.Body>
+                <Modal.Body>
+                    { !isLoggedIn && 
+                        <div className="loginImg">
+                            <img src="/Images/login.gif" alt="Login gif" />
+                        </div>
+                    }
+                    {
+                        isLoggedIn &&
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicAbout">
+                                <textarea className='form-control' cols="30" rows="2" placeholder="Write blog"></textarea>
+                            </Form.Group>
+                            <div>
+                                <button className='btn btn-primary'>
+                                    Post
+                                </button>
+                            </div>
+                        </Form>
+                    }
+                </Modal.Body>
             </Modal>
         </div>
     )
