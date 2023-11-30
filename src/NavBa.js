@@ -10,7 +10,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-const NavBar = () => {
+const NavBa = () => {
     const [lgShow, setLgShow] = useState(false);
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -99,5 +99,5 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBa
 
