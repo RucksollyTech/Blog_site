@@ -11,17 +11,14 @@ const Footer = () => {
                     <Link to={"/all_blog"} className='bold6 text-dark'>
                         All blog
                     </Link>
-                    <Link to={"/"} className='bold6 text-dark'>
+                    <Link to={"/all_users"} className='bold6 text-dark'>
                         All bloggers 
                     </Link>
-                    <Link to={"/"} className='bold6 text-dark'>
+                    <Link to={"/faqs"} className='bold6 text-dark'>
                         FAQs
                     </Link>
                     <Link to={"/about"} className='bold6 text-dark'>
                         About
-                    </Link>
-                    <Link to={"/"} className='bold6 text-dark'>
-                        Support
                     </Link>
                 </div>
                 <div className='flex'>

@@ -9,6 +9,7 @@ import Profile from "./Profile";
 import AllUsers from "./AllUsers";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Faq from "./Faq";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/all_users" element={<AllUsers />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign_up" element={<SignUp />} />
+                <Route path="/faqs" element={<Faq />} />
             </Routes>
             <Footer />
         </Router>

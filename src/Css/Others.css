@@ -30,3 +30,56 @@
 .loginImg img{
     max-height: 400px;
 }
+.filterSection{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 20px;
+    padding: 20px 0;
+}
+.bgGray{
+    background-color: #f1f1f1;
+}
+.allMem{
+    font-weight: 700;
+    border-bottom: 4px solid black;
+    max-width: 180px;
+}
+.usersSearch{
+    background-color: #fff;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+.usersSearch input{
+    border: none;
+}
+.userDescriptions{
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 25px 0;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+}
+.userDescriptions span{
+    font-weight: 700;
+    font-size: 15px;
+}
+.userDescriptions img{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+.blueBg{
+    background-color: #A9D2F8;
+}
+.faq{
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    background-color: #fff;
+}
+.faqContainer{
+    padding: 30px 0;
+}
