@@ -5,8 +5,10 @@ import Blogs from './Blogs'
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import MyData from './MyData';
 
 const Home = () => {
+    const data = MyData()
     const [lgShow, setLgShow] = useState(false);
 
     const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -44,7 +46,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Blogs />
+            <Blogs dataFromServer={data} info={"The information"}/>
             <div className="mt_3">
                 <Link to={"/all_blogs"} className='text-danger bold6 font_20'>
                     View all...
