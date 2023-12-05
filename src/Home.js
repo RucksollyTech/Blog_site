@@ -10,7 +10,7 @@ import MyData from './MyData';
 const Home = () => {
     const data = MyData()
     const [lgShow, setLgShow] = useState(false);
-
+    
     const [isLoggedIn, setIsLoggedIn] = useState(true)
     return (
         <div className='standardWidth pt_4'>
