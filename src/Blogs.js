@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { Link } from 'react-router-dom';
+import DateFormater from './DateFormater';
 
 // const Blogs = (props) => {
     // access it like so
@@ -21,17 +22,17 @@ const Blogs = ({dataFromServer,info}) => {
                         data.map(value=>(
                             <Card key={value.id}>
                                 <div className='bloggerInfoContainer'>
-                                    <Link to={"/profile"}>
+                                    <Link to={`/profile/${value.name}`}>
                                         {/* /Images/user.jpg */}
                                         <img src={`${serverUrl}${value.userImage}`} alt={value.name} />
                                     </Link>
-                                    <Link to={"/profile"} className='text-dark'>
+                                    <Link to={`/profile/${value.name}`} className='text-dark'>
                                         <span>
                                             {value.name}
                                         </span>
                                     </Link>
                                 </div>
-                                <Link to={"/view_blogs"} className='text-dark'>
+                                <Link to={`/view_blogs/${value.id}`} className='text-dark'>
                                     <Card.Body>
                                         <Card.Title>{value.blogTitle}</Card.Title>
                                         <Card.Text>
@@ -40,7 +41,7 @@ const Blogs = ({dataFromServer,info}) => {
                                     </Card.Body>
                                 </Link>
                                 <Card.Footer>
-                                    <small className="text-muted">Date posted: {value.date}</small>
+                                    <small className="text-muted">Date posted: {<DateFormater date={value.date}/>}</small>
                                 </Card.Footer>
                             </Card>
                         ))

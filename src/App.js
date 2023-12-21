@@ -22,8 +22,10 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/all_blogs" element={<AllBlogs />} />
-                <Route path="/view_blogs" element={<ViewBlog />} />
-                <Route path="/profile" element={<Profile />} />
+                {/* <Route path="/view_blogs" element={<ViewBlog />} /> */}
+                <Route path="/view_blogs/:id" element={<ViewBlog />} />
+                {/* <Route path="/profile" element={<Profile />} /> */}
+                <Route path="/profile/:username" element={<Profile />} />
                 <Route path="/all_users" element={<AllUsers />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign_up" element={<SignUp />} />
