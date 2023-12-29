@@ -10,6 +10,7 @@ import AllUsers from "./AllUsers";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Faq from "./Faq";
+import Test from "./Test";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/testing" element={<Test />} />
                 <Route path="/all_blogs" element={<AllBlogs />} />
                 {/* <Route path="/view_blogs" element={<ViewBlog />} /> */}
                 <Route path="/view_blogs/:id" element={<ViewBlog />} />

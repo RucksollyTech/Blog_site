@@ -6,9 +6,12 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import MyData from './MyData';
+import Test from './Test';
+import TestData from './TestData';
 
 const Home = () => {
     const data = MyData()
+    const MyTestData = TestData()
     const [lgShow, setLgShow] = useState(false);
     
     const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -47,6 +50,7 @@ const Home = () => {
                 </div>
             </div>
             <Blogs dataFromServer={data} info={"The information"}/>
+            <Test datas= {MyTestData} />
             <div className="mt_3">
                 <Link to={"/all_blogs"} className='text-danger bold6 font_20'>
                     View all...
