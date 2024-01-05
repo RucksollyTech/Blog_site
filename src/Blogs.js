@@ -12,8 +12,7 @@ const Blogs = ({dataFromServer,info}) => {
     const serverUrl = "/Images/"
 
     const [data,setData]= useState(dataFromServer ? dataFromServer : [] )
-    // const [data,setData]= useState(dataFromServer)
-    // console.log(data)
+    
     return (
         <div className='pt_4'>
             <CardGroup >
@@ -22,21 +21,21 @@ const Blogs = ({dataFromServer,info}) => {
                         data.map(value=>(
                             <Card key={value.id}>
                                 <div className='bloggerInfoContainer'>
-                                    <Link to={`/profile/${value.name}`}>
+                                    <Link to={`/profile/${value.id}`}>
                                         {/* /Images/user.jpg */}
-                                        <img src={`${serverUrl}${value.userImage}`} alt={value.name} />
+                                        <img src={`${serverUrl}${value.userImage ? value.userImage : "user.jpg"}`} alt={value.user.user} />
                                     </Link>
-                                    <Link to={`/profile/${value.name}`} className='text-dark'>
+                                    <Link to={`/profile/${value.user.user}`} className='text-dark'>
                                         <span>
-                                            {value.name}
+                                            {value.user.user}
                                         </span>
                                     </Link>
                                 </div>
                                 <Link to={`/view_blogs/${value.id}`} className='text-dark'>
                                     <Card.Body>
-                                        <Card.Title>{value.blogTitle}</Card.Title>
+                                        <Card.Title>{value.title}</Card.Title>
                                         <Card.Text>
-                                            {value.blog}
+                                            {value.body}
                                         </Card.Text>
                                     </Card.Body>
                                 </Link>

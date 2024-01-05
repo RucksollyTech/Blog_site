@@ -1,34 +1,48 @@
-import React, { useState } from 'react'
-import TestData from './TestData'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
-const Test = ({datas}) => {
-    // const datas = TestData()
-    // const [data,setData] = useState(datas ? datas : [])
-    if (datas){
-        
-    }else{
-        datas = TestData()
+const Test = () => {
+    const [data,setData] =useState()
+
+    
+    async function getData(){
+        try {
+            const response = await axios.get('https://rucksolly.pythonanywhere.com/api/blogs');
+            setData(response.data)
+        } catch (error) {
+            console.error(error);
+        }
     }
-  return (
-    <div className='standardWidth'>
-        <div className="grider">
-            {datas && datas.map(item=>(
-                <div className="border p-4 mb-3 rounded">
-                    <h3>
-                        {item.title}
-                    </h3>
+
+    useEffect(()=>{
+        getData()
+    },[])
+    
+    return (
+        <div className='standardWidth'>
+            {data && data.map((info)=>(
+                <div key={info.id} className='border-bottom mb-3 p-2'>
+                    <h2>{info.user.user}</h2>
                     <p>
-                        {item.body}
+                        About : {info.user.about}
                     </p>
-                    <h6>
-                        {item.name}
-                    </h6>
+                    <p>
+                        Email: {info.user.email}
+                    </p>
+                    <div className="pt-2">
+                        Blog Title : {info.title}
+                    </div>
+                    <div className="pt-3">
+                        <h4>
+                            My profile picture
+                        </h4>
+                        <img src={`https://rucksolly.pythonanywhere.com${info.user.image}`} alt={info.user.user} />
+                    </div>
                 </div>
-            ))}
-            
+            ))
+        }
         </div>
-    </div>
-  )
+    )
 }
 
 export default Test

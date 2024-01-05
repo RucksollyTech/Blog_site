@@ -1,17 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Blogs from './Blogs'
 
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import MyData from './MyData';
-import Test from './Test';
-import TestData from './TestData';
+import axios from 'axios';
 
 const Home = () => {
-    const data = MyData()
-    const MyTestData = TestData()
+    
+    const [data, setData] = useState([]);
+
+    const Mydata = async ()=>{
+        try {
+            const {data} = await axios.get('https://rucksolly.pythonanywhere.com/api/blogs');
+            
+            setData(data)
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+    useEffect(() => {
+        Mydata();
+    },[])
+
+
+
+
+
+
+
     const [lgShow, setLgShow] = useState(false);
     
     const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -49,8 +69,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Blogs dataFromServer={data} info={"The information"}/>
-            <Test datas= {MyTestData} />
+            {data && data.length > 0 && <Blogs dataFromServer={data} info={"The information"}/>}
+            {/* <Test datas= {MyTestData} /> */}
             <div className="mt_3">
                 <Link to={"/all_blogs"} className='text-danger bold6 font_20'>
                     View all...
