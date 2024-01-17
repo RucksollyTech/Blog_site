@@ -10,31 +10,38 @@ import axios from 'axios';
 const Home = () => {
     
     const [data, setData] = useState([]);
-
     const Mydata = async ()=>{
         try {
             const {data} = await axios.get('https://rucksolly.pythonanywhere.com/api/blogs');
-            
             setData(data)
         } catch (error) {
             console.error(error);
         }
     }
-
-
     useEffect(() => {
         Mydata();
     },[])
 
-
-
-
-
-
-
     const [lgShow, setLgShow] = useState(false);
     
     const [isLoggedIn, setIsLoggedIn] = useState(true)
+
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+
+    const submitHandler = async(e) => {
+        e.preventDefault()
+        const {datas} = await axios.post('https://rucksolly.pythonanywhere.com/api/create_blog', {
+            title,
+            body,
+        })
+        // if(datas) {
+        //     setData(data.unshift(datas))
+        // }
+    }
+
+
+
     return (
         <div className='standardWidth pt_4'>
             <h1>
@@ -100,10 +107,29 @@ const Home = () => {
                         isLoggedIn &&
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicAbout">
-                                <textarea className='form-control' cols="30" rows="2" placeholder="Write blog"></textarea>
+                                <input 
+                                    type='text' 
+                                    className='form-control' 
+                                    placeholder='Title' 
+                                    value={title}
+                                    onChange={(e)=>setTitle(e.target.value)}
+                                />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicAbout">
+                                <textarea 
+                                    className='form-control' 
+                                    cols="30" 
+                                    rows="2" 
+                                    placeholder="Write blog"
+                                    value={body}
+                                    onChange={(e)=>setBody(e.target.value)}
+                                ></textarea>
                             </Form.Group>
                             <div>
-                                <button className='btn btn-primary'>
+                                <button 
+                                    className='btn btn-primary'
+                                    onClick={submitHandler}
+                                >
                                     Post
                                 </button>
                             </div>
